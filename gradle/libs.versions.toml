@@ -1,0 +1,10 @@
+[versions]
+kotlin = "2.0.21"
+kordex = "1.5.8"
+kord-extensions = "1.5.8"
+slf4j = "2.0.9"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
+
+slf4j = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
