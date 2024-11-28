@@ -26,10 +26,15 @@ jobs:
         with:
           java-version: '22'
           distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+          with:
+            gradle-version: "8.8"
     
       - name: Build with JIB
         run: |
-          ./gradlew jib \
+          gradle jib \
           -Djib.to.image=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest \
           -Djib.to.auth.username=${{ github.actor }} \
           -Djib.to.auth.password=${{ secrets.GITHUB_TOKEN }}
