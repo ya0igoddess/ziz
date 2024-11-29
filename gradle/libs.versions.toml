@@ -1,13 +1,19 @@
 [versions]
 kotlin = "2.0.21"
 kordex = "1.5.8"
-kord-extensions = "1.5.8"
 slf4j = "2.0.9"
 
-junit5 = "5.11.13"
 jib = "3.3.2"
 
-[libraries]
-kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
+kotest = "5.9.1"
 
+
+[libraries]
 slf4j = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+
+kotest-runner = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+
+
+[bundles]
+testing = ["kotest-runner", "kotest-assertions"]

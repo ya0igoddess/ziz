@@ -6,7 +6,7 @@ plugins {
 }
 
 dependencies {
-    testImplementation("io.kotest:kotest-runner-junit5${libs.versions.junit5}")
+    testImplementation(libs.bundles.testing)
 }
 
 jib {
@@ -19,6 +19,10 @@ jib {
     container {
         mainClass = "com.github.ya0igoddess.ziz.MainKt"
     }
+}
+
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
 }
 
 application {
