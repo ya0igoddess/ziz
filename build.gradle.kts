@@ -5,6 +5,10 @@ plugins {
     id("com.google.cloud.tools.jib") version(libs.versions.jib)
 }
 
+dependencies {
+    testImplementation("io.kotest:kotest-runner-junit5${libs.versions.junit5}")
+}
+
 jib {
     from {
         image = "openjdk:17-alpine"
